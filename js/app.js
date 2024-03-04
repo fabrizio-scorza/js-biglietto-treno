@@ -19,7 +19,7 @@ if (age < 18){
 if (age >= 65){
         price = price - price*0.4; //number
 } 
-//dichiarazione della costante numero arrotondato
-const roundPrice = Math.round(price*100) /100;
+// passaggio da numero a stringa per troncare il prezzo al secondo decimale
+const finalPrice = price.toFixed(2);
 
-console.log('Il prezzo del biglietto è: ' + roundPrice);
+console.log('Il prezzo del biglietto è: ' + finalPrice );
