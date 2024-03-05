@@ -14,10 +14,10 @@ let price = km*0.21; //number
 
 //controllo dell'età per applicare lo sconto
 if (age < 18){
-    price = price - price*0.2; //number
+    price -= price*0.2; //number
 } 
 if (age >= 65){
-        price = price - price*0.4; //number
+        price -= price*0.4; //number
 } 
 // passaggio da numero a stringa per troncare il prezzo al secondo decimale
 const finalPrice = price.toFixed(2);
