@@ -9,17 +9,27 @@
 const km = parseFloat(prompt('Inserisci i chilometri da percorrere:')); //number
 const age = parseInt(prompt('Inserisci la tua età:')); //number
 
-//dichiarazione della variabile prezzo calcolata sulla base dei chilometri da percorrere
-let price = km*0.21; //number
+//validazione dei dati quando km ed età sono maggiori di sero e non sono nan
+if(
+    km > 0 && 
+    age > 0 &&
+    !isNaN(km) &&
+    !isNaN(age)
+){
+    //dichiarazione della variabile prezzo calcolata sulla base dei chilometri da percorrere
+    let price = km*0.21; //number
 
-//controllo dell'età per applicare lo sconto
-if (age < 18){
-    price -= price*0.2; //number
-} 
-if (age >= 65){
+    //controllo dell'età per applicare lo sconto
+    if (age < 18){
+        price -= price*0.2; //number
+    } 
+    if (age >= 65){
         price -= price*0.4; //number
-} 
-// passaggio da numero a stringa per troncare il prezzo al secondo decimale
-const finalPrice = price.toFixed(2);
+    } 
+    // passaggio da numero a stringa per troncare il prezzo al secondo decimale
+    const finalPrice = price.toFixed(2);
 
-console.log('Il prezzo del biglietto è: ' + finalPrice );
+    console.log('Il prezzo del biglietto è: ' + finalPrice );
+} else{ 
+    alert('I DATI NO SONO CORRETTI');
+}
